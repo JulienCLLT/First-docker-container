@@ -2,14 +2,14 @@
 
 ## Crée son dockerfile
 
-Le dockerfile est une suite d'intruction qui indique à docker comment crée son container (une image).
+Le dockerfile est une suite d'instruction qui indique à docker comment crée son container (une image).
 
-Generé une image docker avec un dockerfile:
+Généré une image docker avec un dockerfile:
 ```bash
 docker build . -t [name image]
 ```
 
-Verifier la presence des images docker
+Vérifier la présence des images docker
 ```bash
 docker images
 ou 
@@ -23,7 +23,7 @@ docker image ls
  ```
 - Option -i : interactif
 - Option -t : terminal
-  - Avec les Option -it utiliser ctrl+P et ctrl+Q pour sortir du mode interatif et de laisser le container en marche en arriere fond
+  - Avec les Option -it utiliser ctrl+P et ctrl+Q pour sortir du mode interactif et de laisser le container en marche en arriére fond
   - Pour rattacher un container 
      ```bash
         docker attach [name generate by docker adjectif + name scientist]
@@ -35,7 +35,7 @@ docker image ls
 
 ## Les volumes
 
-Par default les container n'ont aucune persistance de donnée. A chaque arrêt d'un container les données son perdu.
+Par défaut les container n'ont aucune persistance de donnée. A chaque arrêt d'un container les données son perdu.
 
 Les volumes permet de faire persister des données 
 
@@ -58,20 +58,20 @@ lancer une image avec un volume exemple avec psql
 ```bash
 docker run -v data:var/lib/postgresql/data postgres
 ```
-toute les données du container presente au chemin var/lib/postgresql/data sera dans le volume data
+Toutes les données du container présente au chemin var/lib/postgresql/data sera dans le volume data
 
 ou
 
 ```bash
 docker run --mount type=bind,source=[path destination save data],target=var/lib/postgresql/data
 ```
-Toute les données du container present au chemin var/lib/postgresql/data sera dans le dossier [path destination save data] sur la machine host
+Toutes les données du container présent au chemin var/lib/postgresql/data sera dans le dossier [path destination save data] sur la machine host
 
 ![](./publics/volume-docker.jpg)
 
 ## docker-compose
 
-Docker compose permet de composé une suite complexe de plusieur container avec divers configuration.
+Docker compose permet de composé une suite complexe de plusieur container avec divers configurations.
 Pour crée les intructions d'un docker compose on utilise un docker-compose.yml  
 
 Pour executer un fichier docker-compose.yml
